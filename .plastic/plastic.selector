@@ -1,0 +1,3 @@
+rep "UN402_W2_2022@DCarvalho12@cloud"
+  path "/"
+    smartbranch "/main"
