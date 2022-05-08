@@ -5,12 +5,11 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     private Player playerScript;
-    public GameObject player;
     public Animator coinAnimator;
     // Start is called before the first frame update
     void Start()
     {
-        playerScript = player.GetComponent<Player>();
+        playerScript = GameObject.FindWithTag("Player").GetComponent<Player>();
         coinAnimator = gameObject.GetComponent<Animator>();
     }
 

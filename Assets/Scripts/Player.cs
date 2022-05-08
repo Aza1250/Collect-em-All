@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -73,6 +74,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Enemy") {
+            SceneManager.LoadScene("LoseScreen");
             Destroy(gameObject);
         }
     }

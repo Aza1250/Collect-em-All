@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 70fe20f3a77117e48a466809fada22c8
+  - enabled: 1
+    path: Assets/Scenes/LoseScreen.unity
+    guid: 0e97cdac03d8aa94d965814c339642c6
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 2878fd2a4babd514eb0dcb92e7bb297e,
       type: 2}
