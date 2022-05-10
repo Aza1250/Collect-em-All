@@ -57,11 +57,6 @@ public class Player : MonoBehaviour
             jumpsAvailable = 2;
         }
     }
-
-    public void CollectCoin() {
-        coinsCollected++;
-    }
-
     void ResetVel()
     {
         rb.velocity = new Vector2(0, rb.velocity.y);

@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other) {
         if (other.gameObject.tag == "Player") {
-            playerScript.CollectCoin();
+            playerScript.coinsCollected++;
             Debug.Log(playerScript.coinsCollected);
 
             coinAnimator.SetTrigger("Hit");
