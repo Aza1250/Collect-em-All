@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public bool isGrounded = false;
     public int jumpsAvailable = 2;
     public int coinsCollected;
-    public GameObject enemy;
+    public int health = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.RightShift)) {
+            Time.timeScale = 0.1f;
+        }
+        if (Input.GetKeyUp(KeyCode.RightShift)) {
+            Time.timeScale = 1f;
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (facingRight) rb.velocity = Vector2.right * 20f;
@@ -69,6 +77,17 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Enemy") {
+            TakeDamage(1);
+        }
+        if (other.gameObject.tag == "Kill") {
+            TakeDamage();
+        }
+    }
+
+    void TakeDamage(int dmg = 50) {
+        health -= dmg;
+        print(health);
+        if (health <= 0) {
             SceneManager.LoadScene("LoseScreen");
             Destroy(gameObject);
         }

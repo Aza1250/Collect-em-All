@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Head
   - Coin
+  - HealthUI
+  - Kill
   layers:
   - Default
   - TransparentFX
