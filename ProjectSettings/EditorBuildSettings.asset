@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseScreen.unity
     guid: 0e97cdac03d8aa94d965814c339642c6
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 090b1f5205bcef14ba7ae59f073dba6e
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 2878fd2a4babd514eb0dcb92e7bb297e,
       type: 2}
