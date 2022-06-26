@@ -5,34 +5,49 @@ using UnityEngine;
 
 public class Indicator : MonoBehaviour
 {
-    public GameObject[] coins;
+    public ArrayList coins;
+    SortedDictionary<int, GameObject> coinDict = new SortedDictionary<int, GameObject>();
     public Vector2[] pos;
     public GameObject player;
  
     void Start() {
-        coins = new GameObject[GameObject.FindObjectsOfType<Coin>().Length];
+        coins = new ArrayList(GameObject.FindObjectsOfType<Coin>());
         player = GameObject.FindObjectOfType<Player>().gameObject;
+        // Fill();
     }
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        ArrayList distances = new ArrayList();
-        print(coins);
-        for (int i = 0; i < coins.Length; i++) {
-            GameObject coin = coins[i].gameObject;
-            pos[i] = coin.transform.position;
-            print(coin.transform.position);
-            print("Distance to the coin number " + i + " is " + Vector2.Distance(pos[i], player.transform.position));
-        }
+        coins.Sort();
+        print(coins[0]);
+        // Sort();
+        // GetClosestCoin();
 
-        // Array.Sort(distances);
-        // String str = "";
-        // for (int i = 0; i < distances.Length; i++) {
-        //     str += distances[i] + "  ";
-        // }
-        // //print(str);
-
-        // print(distances[0]);
         
     }
+
+    
+
+    // void Fill() {
+    //     foreach (Coin coin in coins) {
+    //         coinDict.Add(coin.gameObject.transform,coin.gameObject);
+    //     }
+    // }
+
+    //sort the coins by distance from player
+    // void Sort() {
+    //     pos = new Vector2[coinDict.Count];
+    //     int i = 0;
+    //     foreach (KeyValuePair<int, GameObject> pair in coinDict) {
+    //         pos[i] = pair.Value.transform.position;
+    //         i++;
+    //     }
+    //     Array.Sort(pos, player.transform.position);
+    // }
+    
+    //get the closest coin to the player
+    // public GameObject GetClosestCoin() {
+    //     Sort();
+    //     return coinDict[pos[0]];
+    // }
 }
