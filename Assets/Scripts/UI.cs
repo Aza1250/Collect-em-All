@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
     GameObject player;
-    Text healthText;
+    public Text healthText;
     public Text timerText;
     public Text coinsCollectedText;
     public float time;
@@ -30,7 +30,7 @@ public class UI : MonoBehaviour
     void Update()
     {
         healthText.text = "Health: " + player.GetComponent<Player>().health.ToString();
-        print(totalCoins + "  " + GameObject.FindObjectsOfType<Coin>().Length);
+        //print(totalCoins + "  " + GameObject.FindObjectsOfType<Coin>().Length);
         coinsCollectedText.text = "Coins: " +  (totalCoins - GameObject.FindObjectsOfType<Coin>().Length);
         if (Input.GetKeyDown(KeyCode.RightShift)) time += Time.deltaTime * 2;
         else time += Time.deltaTime;

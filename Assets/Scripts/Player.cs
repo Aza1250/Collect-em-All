@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         coinsCollected = 0;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -50,7 +51,13 @@ public class Player : MonoBehaviour
             facingRight = false;
         }
 
-    
+        if (Input.GetKey(KeyCode.R))
+        {
+            GameObject canvas = GameObject.FindWithTag("Canvas");
+            Destroy(canvas);
+            SceneManager.LoadScene("Main");
+
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && jumpsAvailable > 0)
         {

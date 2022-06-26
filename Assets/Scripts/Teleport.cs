@@ -16,4 +16,10 @@ public class Teleport : MonoBehaviour
             SceneManager.LoadScene("WinScreen");
         }
     }
+
+    void OnDestroy() {
+        
+    }
+
+
 }
