@@ -18,13 +18,16 @@ public class Indicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coins.Sort();
-        print(coins[0]);
-        // Sort();
+        //coins.Sort(SortByDistanceToPlayer);
+        //print(coins[0]);
         // GetClosestCoin();
-
+        //var comparer = new CoinComparer { myGameObject = player };
+        //CoinComparer coinComparer = new CoinComparer();
+        //coins.Sort(0, coins.Count, coinComparer);
         
     }
+
+
 
     
 

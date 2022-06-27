@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Coin : MonoBehaviour, IComparable<GameObject>
+public class Coin : MonoBehaviour
 {
     private Player playerScript;
     public Animator coinAnimator;
@@ -30,17 +30,6 @@ public class Coin : MonoBehaviour, IComparable<GameObject>
             coinAnimator.SetTrigger("Hit");
 
             Destroy(this.gameObject, 1f);
-        }
-    }
-
-    public int CompareTo(GameObject other)
-    {
-        if (Vector2.Distance(player.transform.position, transform.position) > Vector2.Distance(player.transform.position, other.transform.position)) {
-            return 1;
-        } else if (Vector2.Distance(player.transform.position, transform.position) < Vector2.Distance(player.transform.position, other.transform.position)) {
-            return -1;
-        } else {
-            return 0;
         }
     }
 }
